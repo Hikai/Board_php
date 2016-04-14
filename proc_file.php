@@ -1,6 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
-	die("Unusual request method");
+// if ($_SERVER["REQUEST_METHOD"] != "POST") {
+// 	die("Unusual request method");
+// }
+if (!isset($_POST["upload"])) {
+	exit;
 }
 // $basedir_upload = "./files/";
 // $tmp_name_file = str_replace(".", "", $_FILES["file"]["tmp_name"]);
