@@ -11,10 +11,10 @@
 	$str_query = "select * from table_board where num='".$num."';";
 	$query_result = @mysql_query($str_query) or die ("Query error");
 	while ($array_result = mysql_fetch_array($query_result)) {
-		$name = $array_result[1];
-		$title = $array_result[2];
-		$date = $array_result[3];
-		$content = $array_result[4];
+		$name = $array_result["name"];
+		$title = $array_result["title"];
+		$date = $array_result["date"];
+		$content = $array_result["content"];
 	}
 	echo("Num : ".$num."<br />");
 	echo("Name : ".$name."<br />");
