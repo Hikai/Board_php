@@ -15,7 +15,7 @@
 		include("./db_connect.php");
 		$str_query = "select * from table_board order by num desc;";
 		$query_result = @mysqli_query($conn,$str_query) or die ("Query error");
-		while ($array_result = mysqli_fetch_array($query_result)) {
+		while ($array_result = mysqli_fetch_array($query_result, MYSQLI_ASSOC)) { // MYSQLI_NUM : numeric array, MYSQLI_ASSOC : associative array.
 			echo("<tr><td>".$array_result["num"]."</td><td>".$array_result["name"]."</td><td><a href=\"./view.php?num=".$array_result["num"]."\">".$array_result["title"]."</a></td><td>".$array_result["date"]."</td></tr>");
 		}
 		mysqli_close($conn);
